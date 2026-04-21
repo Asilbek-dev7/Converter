@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="O'zbekiston Markaziy Banki kurslari asosida zamonaviy valyuta konverter.">
+  <title>CurrencyUZ - Valyuta Konverter</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="bg-blur bg-blur-1"></div>
+  <div class="bg-blur bg-blur-2"></div>
+
+  <main class="container">
+    <header class="hero">
+      <div>
+        <p class="badge">CBU Live Rates</p>
+        <h1>Valyuta Konverter</h1>
+        <p class="lead">O'zbekiston Markaziy Banki e'lon qilgan joriy kurslar asosida tez va aniq hisoblash.</p>
+      </div>
+      <button id="themeToggle" class="ghost-btn" type="button" aria-label="Mavzuni almashtirish">🌙 / ☀️</button>
+    </header>
+
+    <section class="card converter-card">
+      <div class="form-grid">
+        <div class="field full">
+          <label for="amount">Miqdor</label>
+          <input id="amount" type="number" min="0" step="any" value="10000" placeholder="Masalan: 10000">
+        </div>
+
+        <div class="field">
+          <label for="fromCurrency">Qaysi valyutadan</label>
+          <select id="fromCurrency"></select>
+        </div>
+
+        <div class="field">
+          <label for="toCurrency">Qaysi valyutaga</label>
+          <select id="toCurrency"></select>
+        </div>
+
+        <button id="swapBtn" class="ghost-btn full" type="button">Almashtirish ↔</button>
+      </div>
+
+      <div id="result" class="result-box">Kurslar yuklanmoqda...</div>
+
+      <div class="meta-row">
+        <div>
+          <p class="meta-label">So'nggi yangilanish</p>
+          <p id="rateDate" class="meta-value">-</p>
+        </div>
+        <button id="refreshBtn" class="primary-btn" type="button">Kurslarni yangilash</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-head">
+        <h2>Mashhur kurslar</h2>
+        <p>1 birlik valyuta necha so'm</p>
+      </div>
+      <div id="quickRates" class="rate-grid"></div>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
